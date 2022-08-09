@@ -6,7 +6,7 @@ echo -e "\n>>> Resetting the database"
 
 # Assuming local machine is logged in to remote DB server via ssh
 
-# Environment variables to specify
+# Environment variables to specify-
 # the target database and login credentials.
 
 #check
@@ -28,8 +28,8 @@ pg_dump --format=custom > $BACKUP_FILE
 echo -e "Backup completed"
 
 
-# Used pg_restore to restore the database from backup_file 
-# and name with the pgdatabase name stored 
+# Used pg_restore to restore the database from backup_file-
+# and name with the pgdatabase name stored-
 # in the environmental variables
 echo -e "\nRestoring database from backup"
 pg_restore --dbname $PGDATABASE $BACKUP_FILE
