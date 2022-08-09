@@ -5,6 +5,7 @@ echo -e "\n>>> Resetting the database"
 ./manage.py reset_db --close-sessions --noinput
 
 # Assuming local machine is logged in to remote DB server via ssh
+
 # Environment variables to specify
 # the target database and login credentials.
 
@@ -14,7 +15,7 @@ export PGDATABASE=wyre_db
 export PGUSER=wyreuser
 export PGPASSWORD=wyre1234
 
-# add descriptive file name + timestamp to give dump descriptive name
+# descriptive file name + timestamp to give dump descriptive name
 # Eg. postgres_wyre_db_1591255548.pgdump
 TIME=$(date "+%s")
 BACKUP_FILE="postgres_${PGDATABASE}_${TIME}.pgdump"
@@ -26,7 +27,7 @@ pg_dump --format=custom > $BACKUP_FILE
 echo -e "Backup completed"
 
 
-# Use pg_restore to restore the database from backup_file 
+# Used pg_restore to restore the database from backup_file 
 # and name with the pgdatabase name stored 
 # in the environmental variables
 echo -e "\nRestoring database from backup"
