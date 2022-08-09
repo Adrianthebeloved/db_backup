@@ -9,6 +9,7 @@ echo -e "\n>>> Resetting the database"
 # Environment variables to specify
 # the target database and login credentials.
 
+#check
 export PGHOST=64.227.1.219
 export PGPORT=''
 export PGDATABASE=wyre_db
@@ -39,7 +40,7 @@ echo -e "\n>>> Running migrations"
 echo -e "\n>>> Creating new superuser 'wyreuser'"
 ./manage.py createsuperuser \
    --username wyreuser \
-   --email wyreuser@example.com \
+   --email wyreuser@example.com \ #check
    --noinput
 
 echo -e "\n>>> Setting superuser 'wyreuser' password to wyre1234"
